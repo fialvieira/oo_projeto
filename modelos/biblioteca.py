@@ -1,3 +1,4 @@
+# Classe Biblioteca
 class Biblioteca:
     def __init__(self, nome="", ativo=False) -> None:
         self.nome = nome
