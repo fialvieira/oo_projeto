@@ -2,11 +2,14 @@
 class Biblioteca:
     bibliotecas = []
 
+    # Método construtor para inicializar os atributos do objeto
     def __init__(self, nome="", ativo=False) -> None:
         self.nome = nome
         self._ativo = ativo  # Atributo privado, com _propriedade
         Biblioteca.bibliotecas.append(self)
 
+    # Método __str__ é chamado quando usamos print() no objeto.
+    # Ele deve retornar uma string que representa o objeto de forma legível.
     def __str__(self) -> str:
         return f"Biblioteca: {self.nome}\nAtivo: {"Sim" if self._ativo else "Não"}"
 
