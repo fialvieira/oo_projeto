@@ -10,14 +10,21 @@ def main():
     biblioteca_shopping = Biblioteca("Biblioteca do Shopping", False)
     # biblioteca_shopping.alterna_estado()
     biblioteca_shopping.receber_avaliacao("João Silva", 8.5)
-    Biblioteca.listar_bibliotecas()
+    # Biblioteca.listar_bibliotecas()
     
     # Definição de objetos de livros e revistas
     livro1 = Livro("1984", "George Orwell", 30.0, "084-3245")
+    livro2 = Livro("Brave New World", "Aldous Huxley", 25.0, "123-4567")
     revista1 = Revista("National Geographic", "John Doe", 15.0, "Quinta")
     
-    print(vars(livro1))
-    print(vars(revista1))
+    biblioteca_cidade.adicionar_item(livro1)
+    biblioteca_cidade.adicionar_item(livro2)
+    biblioteca_cidade.adicionar_item(revista1)
+    
+    biblioteca_cidade.exibir_itens()
+    
+    # print(vars(livro1))
+    # print(vars(revista1))
 
 if __name__ == "__main__":
     main()

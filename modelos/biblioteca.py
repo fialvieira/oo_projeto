@@ -1,4 +1,5 @@
 from modelos.avaliacao import Avaliacao
+from modelos.itens.item_biblioteca import ItemBiblioteca
 
 
 # Classe Biblioteca
@@ -10,6 +11,7 @@ class Biblioteca:
         self.nome = nome
         self._ativo = ativo  # Atributo privado, com _propriedade
         self._avaliacao = []
+        self._itens = []
         Biblioteca.bibliotecas.append(self)
 
     # Método __str__ é chamado quando usamos print() no objeto.
@@ -44,3 +46,19 @@ class Biblioteca:
             return "-"
         soma = sum(avaliacao._nota for avaliacao in self._avaliacao)
         return round(soma / len(self._avaliacao), 1)
+
+    # Adiciona item à biblioteca
+    def adicionar_item(self, item: ItemBiblioteca):
+        if not isinstance(item, ItemBiblioteca):
+            raise TypeError("O item deve ser uma instância de ItemBiblioteca.")
+        self._itens.append(item)
+        
+    # Exibir itens da biblioteca
+    def exibir_itens(self):
+        if not self._itens:
+            print("Nenhum item cadastrado.")
+            return
+        print(f"Itens da Biblioteca {self.nome}\n")
+        print(f"{'Título':<30} {'Autor':<20} {'Preço':<10} {'Edição/ISBN':<30} {'Tipo'}")
+        for item in self._itens:
+            print(f"{item._titulo:<30} {item._autor:<20} {item._preco:<10} {item._isbn if hasattr(item, '_isbn') else item._edicao:<30} {type(item).__name__}")
