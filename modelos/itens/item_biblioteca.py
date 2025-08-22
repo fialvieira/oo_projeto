@@ -1,6 +1,12 @@
-# Super classe ItemBiblioteca
-class ItemBiblioteca:
+from abc import ABC, abstractmethod
+
+# Super classe ItemBiblioteca (abstrata)
+class ItemBiblioteca(ABC):
     def __init__(self, titulo, autor, preco):
         self._titulo = titulo
         self._autor = autor
         self._preco = preco
+
+    @abstractmethod
+    def aplicar_desconto(self):
+        pass

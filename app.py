@@ -17,6 +17,9 @@ def main():
     livro2 = Livro("Brave New World", "Aldous Huxley", 25.0, "123-4567")
     revista1 = Revista("National Geographic", "John Doe", 15.0, "Quinta")
     
+    livro1.aplicar_desconto()
+    revista1.aplicar_desconto()
+    
     biblioteca_cidade.adicionar_item(livro1)
     biblioteca_cidade.adicionar_item(livro2)
     biblioteca_cidade.adicionar_item(revista1)
