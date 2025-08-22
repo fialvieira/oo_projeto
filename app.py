@@ -1,6 +1,9 @@
 from modelos.biblioteca import Biblioteca
+from modelos.itens.livro import Livro
+from modelos.itens.revista import Revista
 
 def main():
+    # Definição de objetos de Bibliotecas
     biblioteca_cidade = Biblioteca("Biblioteca Municipal", True)
     # biblioteca_cidade.alterna_estado()
     biblioteca_cidade.receber_avaliacao("Filipe Vieira", 10.0)
@@ -8,6 +11,13 @@ def main():
     # biblioteca_shopping.alterna_estado()
     biblioteca_shopping.receber_avaliacao("João Silva", 8.5)
     Biblioteca.listar_bibliotecas()
+    
+    # Definição de objetos de livros e revistas
+    livro1 = Livro("1984", "George Orwell", 30.0, "084-3245")
+    revista1 = Revista("National Geographic", "John Doe", 15.0, "Quinta")
+    
+    print(vars(livro1))
+    print(vars(revista1))
 
 if __name__ == "__main__":
     main()
